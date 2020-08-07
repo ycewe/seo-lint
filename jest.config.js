@@ -3,6 +3,6 @@
 
 module.exports = {
   clearMocks: true,
-  testEnvironment: "node",
-  verbose: false
-};
+  testEnvironment: 'node',
+  verbose: false,
+}
