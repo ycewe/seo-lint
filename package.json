@@ -1,0 +1,44 @@
+{
+  "name": "seo-lint",
+  "version": "1.0.0",
+  "description": "HTML SEO best practices",
+  "main": "index.js",
+  "scripts": {
+    "release": "standard-version",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ycewe/seo-lint.git"
+  },
+  "keywords": [
+    "seo",
+    "lint"
+  ],
+  "author": "Eric Ewe",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/ycewe/seo-lint/issues"
+  },
+  "homepage": "https://github.com/ycewe/seo-lint#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "husky": "^4.2.5",
+    "jest": "^26.2.2",
+    "standard-version": "^8.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {},
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
