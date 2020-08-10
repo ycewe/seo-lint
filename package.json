@@ -8,7 +8,7 @@
     "lint:fix": "eslint . --ext .js --fix",
     "prettier": "prettier --write",
     "release": "standard-version -a",
-    "test": "jest -i",
+    "test": "jest -i --verbose",
     "test:ci": "jest -i --silent"
   },
   "repository": {
@@ -25,19 +25,23 @@
     "url": "https://github.com/ycewe/seo-lint/issues"
   },
   "homepage": "https://github.com/ycewe/seo-lint#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
+    "babel-jest": "^26.2.2",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "^3.2.0",
     "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
-    "jest": "^26.2.2",
+    "jest": "^25.5.4",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "standard-version": "^8.0.2"

@@ -3,6 +3,13 @@
 
 module.exports = {
   clearMocks: true,
+  moduleNameMapper: {
+    '@/(.*)$': '<rootDir>/src/$1',
+  },
+  roots: ['<rootDir>/tests'],
   testEnvironment: 'node',
+  transform: {
+    '^.+\\.(js)?$': 'babel-jest',
+  },
   verbose: false,
 }
