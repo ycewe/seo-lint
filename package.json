@@ -9,7 +9,7 @@
     "prettier": "prettier --write",
     "release": "standard-version -a",
     "test": "jest -i --verbose",
-    "test:ci": "jest -i --silent --ci --reporters=default --reporters=jest-junit --collectCoverage=true",
+    "test:ci": "jest -i --silent --ci --passWithNoTests --reporters=default --reporters=jest-junit --collectCoverage=true",
     "test:coverage": "jest -i --coverage"
   },
   "repository": {
