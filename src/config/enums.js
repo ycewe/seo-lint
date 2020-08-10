@@ -1,7 +1,11 @@
 const RULES = {
   IGNORE: -1,
   MUST_BE_ABSENT: 0,
-  ALL: Infinity,
+  MUST_BE_ALL: Infinity,
 }
 
-export { RULES }
+const OUTPUT = {
+  CONSOLE: 'console',
+}
+
+export { RULES, OUTPUT }

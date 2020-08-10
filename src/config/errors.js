@@ -8,7 +8,7 @@ const RULE_ERRORS = {
 }
 
 const CONFIG_ERRORS = {
-  EMPTY_INPUT: 'The input that you provided is empty',
+  EMPTY_HTML: 'The HTML that you provided is empty.',
   INVALID_INPUT: 'Please provide a valid input.',
   INVALID_OUTPUT: 'Please provide a valid output.',
   INVALID_RULES:

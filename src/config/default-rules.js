@@ -6,7 +6,7 @@ export default [
     attributes: [
       {
         name: 'alt',
-        min: RULES.ALL,
+        min: RULES.MUST_BE_ALL,
       },
     ],
   },
@@ -15,7 +15,7 @@ export default [
     attributes: [
       {
         name: 'rel',
-        min: RULES.ALL,
+        min: RULES.MUST_BE_ALL,
       },
     ],
   },
