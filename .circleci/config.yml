@@ -16,11 +16,7 @@ jobs:
           command: npm run test:ci --coverageDirectory=/tmp/test-results/coverage
           environment:
             JEST_JUNIT_OUTPUT_DIR: /tmp/test-results
-            JEST_JUNIT_OUTPUT_NAME: jest-test.xml
-      - run:
-          name: Code Climate Test Reporter - after build
-          command: |
-            ./tmp/cc-test-reporter format-coverage -t lcov -o "tmp/coverage/codeclimate.$CIRCLE_NODE_INDEX.frontend.json" /tmp/test-results/frontend-coverage/lcov.info
+            JEST_JUNIT_OUTPUT_NAME: coverage.xml
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
