@@ -9,7 +9,8 @@
     "prettier": "prettier --write",
     "release": "standard-version -a",
     "test": "jest -i --verbose",
-    "test:ci": "jest -i --silent"
+    "test:ci": "jest -i --silent",
+    "test:coverage": "jest -i --coverage"
   },
   "repository": {
     "type": "git",
