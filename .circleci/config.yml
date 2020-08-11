@@ -26,4 +26,4 @@ jobs:
           path: /tmp/test-results
           destination: test-results
       - codecov/upload:
-          file: /tmp/test-results/coverage/clover.xml
+          file: /tmp/test-results/coverage-final.json
