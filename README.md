@@ -3,7 +3,8 @@
 
 SEOLint is a tool for identifying SEO defects in any given HTML file.
 
-# Installation
+
+## Installation
 Prequisites: NodeJS >= v14.6.0
 
 You can install SEOLint using npm:
@@ -11,7 +12,8 @@ You can install SEOLint using npm:
 $ npm install seo-lint
 ```
 
-# Usage
+
+## Usage
 You can see our default configuration [here](https://github.com/lucduong/seo-linter/#configs).
 
 A basic example when used in code:
@@ -29,8 +31,9 @@ const { SEOLint } = require('seo-lint');
 ```
 From above, results will store the validation outcome in the form of a string which you may log it or stream it into another file.
 
-# Configuration
-## Rules
+
+## Configuration
+### Rules
 The configuration provided has to be an array of objects. Each object has the following
 | Options     | Description                             | Value                           |
 | ---         | ---                                     | ---                             |
@@ -120,7 +123,7 @@ You can overwrite the rules by providing your own SEO rules to the instance as a
   })
 ```
 
-## Instance
+### Instance
 ```js
 new SEOLint({ rules, output })
 ```
@@ -131,7 +134,7 @@ The instance accepts the following object properties:
 | rules       | An array of objects (optional). This will overwrite all the default rules. | array of objects, [{}, {}, ... {}]  |
 | output      | Choice of output. Always returns error in code. Defaults to none. (optional)    | `console`, `/path/to/output.txt`, node writable stream  |
 
-## Method
+### Method
 ```js
 await seoLint.lint(input, output)
 ```
@@ -142,7 +145,8 @@ The method accepts the following object properties:
 | input       | The HTML document to be linted  | `path/to/file.html`, node readable stream |
 | output      | Choice of output. Always returns error in code. Defaults to none. This will always overwrite the instance output as it's for logging files separately (optional)    | `console`, `/path/to/output.txt`, node writable stream  |
 
-# Development
+
+## Development
 
 This repository uses [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
@@ -153,5 +157,6 @@ For release, we use [standard version](https://github.com/conventional-changelog
 npm run release
 ```
 
-# License
+
+## License
 Unlicensed
