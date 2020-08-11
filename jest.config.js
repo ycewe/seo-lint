@@ -3,6 +3,7 @@
 
 module.exports = {
   clearMocks: true,
+  collectCoverageFrom: ['<rootDir>/src/**/*.js'],
   moduleNameMapper: {
     '@/(.*)$': '<rootDir>/src/$1',
   },

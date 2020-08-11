@@ -108,6 +108,3 @@ dist
 
 # jest test
 tests/__output__/*.txt
-
-# npm package
-/lib/
