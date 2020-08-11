@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix",
+    "prepublish": "babel src --out-dir lib",
     "prettier": "prettier --write",
     "release": "standard-version -a",
     "test": "jest -i --verbose",
@@ -30,6 +31,7 @@
     "cheerio": "^1.0.0-rc.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.0",

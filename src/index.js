@@ -1,3 +1,3 @@
 import SEOLint from './seo-lint'
 
-export default SEOLint
+export { SEOLint }

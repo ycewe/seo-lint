@@ -1,6 +1,5 @@
 # SEOLint
-[![codecov](https://codecov.io/gh/ycewe/seo-lint/branch/master/graph/badge.svg)](https://codecov.io/gh/ycewe/seo-lint)
-[![CircleCI](https://circleci.com/gh/ycewe/seo-lint.svg?style=shield&circle-token=f551e1a62352d8121065cbb49fe41d4b5b696188)]()
+[![codecov](https://codecov.io/gh/ycewe/seo-lint/branch/master/graph/badge.svg?token=Z6OWHBIUC8)](https://codecov.io/gh/ycewe/seo-lint) [![CircleCI](https://circleci.com/gh/ycewe/seo-lint.svg?style=shield&circle-token=f551e1a62352d8121065cbb49fe41d4b5b696188)]()
 
 SEOLint is a tool for identifying SEO defects in any given HTML file.
 
