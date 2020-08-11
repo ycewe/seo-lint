@@ -16,14 +16,14 @@ jobs:
           command: npm install
       - run:
           name: Run Tests
-          command: npm run test:ci --coverageDirectory=/tmp/test-results/coverage
+          command: npm run test:ci
           environment:
             JEST_JUNIT_OUTPUT_DIR: /tmp/test-results
-            JEST_JUNIT_OUTPUT_NAME: coverage.xml
+            JEST_JUNIT_OUTPUT_NAME: unit.xml
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
       - codecov/upload:
-          file: /tmp/test-results/coverage.xml
+          file: /tmp/test-results/coverage/clover.xml
