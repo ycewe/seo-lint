@@ -11,13 +11,14 @@ class SEOLint {
   }
 
   async lint(input) {
+  async lint(input, output) {
     const $ = await Loader.load(input)
 
     // remove any repeated errors can could have been generated
     // due to repeated tags/attributes
     this.errors = new Set(this.validator.validate($))
 
-    await Writer.write(this._errorsToString(), this.options?.output)
+    await Writer.write(this._errorsToString(), output ?? this.options?.output)
 
     return this._errorsToString()
   }

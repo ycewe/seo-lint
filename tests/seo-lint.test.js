@@ -14,34 +14,37 @@ describe('seo-lint.js', () => {
 
     describe('when file input is provided', () => {
       describe('when the default rules are used', () => {
-        const subject = new SEOLint()
+        describe('when no output is provided to the instance', () => {
+          const subject = new SEOLint()
 
-        it('should return an empty array when the rules are obeyed ', async () => {
-          expect(
-            await subject.lint(`${__dirname}/__fixtures__/html/success.html`)
-          ).toBe('')
-        })
+          it('should return an empty array when the rules are obeyed ', async () => {
+            expect(
+              await subject.lint(`${__dirname}/__fixtures__/html/success.html`)
+            ).toBe('')
+          })
 
-        it('should return errors when the rules are violated', async () => {
-          expect(
-            await subject.lint(`${__dirname}/__fixtures__/html/failure.html`)
-          ).toBe(failureHTMLOutput)
-        })
+          it('should return errors when the rules are violated', async () => {
+            expect(
+              await subject.lint(`${__dirname}/__fixtures__/html/failure.html`)
+            ).toBe(failureHTMLOutput)
+          })
 
-        describe('when an "console" output is provided', () => {
-          const subject = new SEOLint({ output: 'console' })
-
-          it('should print output to console', async () => {
+          describe('when a "console" output is provide to lint()', () => {
             global.console.log = jest.fn()
 
-            await subject.lint(`${__dirname}/__fixtures__/html/failure.html`)
+            it('should return errors when the rules are violated to "console"', async () => {
+              await subject.lint(
+                `${__dirname}/__fixtures__/html/failure.html`,
+                'console'
+              )
 
-            expect(global.console.log).toHaveBeenCalledTimes(1)
-            expect(global.console.log).toHaveBeenCalledWith(failureHTMLOutput)
+              expect(global.console.log).toHaveBeenCalledTimes(1)
+              expect(global.console.log).toHaveBeenCalledWith(failureHTMLOutput)
+            })
           })
         })
 
-        describe('when a file path output is provided', () => {
+        describe('when a file path output is provided to the instance', () => {
           const output = `${__dirname}/__output__/seo-lint-file-path.txt`
           const subject = new SEOLint({ output })
 
@@ -52,9 +55,23 @@ describe('seo-lint.js', () => {
               expect(data).toBe(failureHTMLOutput)
             })
           })
+
+          describe('when a "console" output is provide to lint()', () => {
+            global.console.log = jest.fn()
+
+            it('should return errors when the rules are violated to "console"', async () => {
+              await subject.lint(
+                `${__dirname}/__fixtures__/html/failure.html`,
+                'console'
+              )
+
+              expect(global.console.log).toHaveBeenCalledTimes(1)
+              expect(global.console.log).toHaveBeenCalledWith(failureHTMLOutput)
+            })
+          })
         })
 
-        describe('when a writable stream output is provided', () => {
+        describe('when a writable stream output is provided to the instance', () => {
           const output = `${__dirname}/__output__/seo-lint-writable-stream.txt`
           const subject = new SEOLint({ output: fs.createWriteStream(output) })
 
@@ -64,6 +81,19 @@ describe('seo-lint.js', () => {
             fs.readFile(output, 'utf8', (_, data) => {
               expect(data).toBe(failureHTMLOutput)
             })
+          })
+        })
+
+        describe('when a "console" output is provided to the instance', () => {
+          const subject = new SEOLint({ output: 'console' })
+
+          it('should print output to console', async () => {
+            global.console.log = jest.fn()
+
+            await subject.lint(`${__dirname}/__fixtures__/html/failure.html`)
+
+            expect(global.console.log).toHaveBeenCalledTimes(1)
+            expect(global.console.log).toHaveBeenCalledWith(failureHTMLOutput)
           })
         })
       })
