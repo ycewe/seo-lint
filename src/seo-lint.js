@@ -10,7 +10,14 @@ class SEOLint {
     this.validator = new Validator(this.options?.rules ?? defaultRules)
   }
 
-  async lint(input) {
+  /**
+   * Validate a given input against the linter rules
+   *
+   * @param {string | stream} input
+   * @param {string | stream} output
+   * @return {string} errors
+   * @memberof SEOLint
+   */
   async lint(input, output) {
     const $ = await Loader.load(input)
 

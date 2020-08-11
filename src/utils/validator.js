@@ -11,6 +11,13 @@ class Validator {
     this._validateRules()
   }
 
+  /**
+   * Validates a given cheerio html with the instantiated rules
+   *
+   * @param {Object} $html
+   * @return {Array} errors
+   * @memberof Validator
+   */
   validate($html) {
     this.errors = [] // reset any errors
     this.$html = $html

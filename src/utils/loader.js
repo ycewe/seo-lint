@@ -3,6 +3,14 @@ import cheerio from 'cheerio'
 import { CONFIG_ERRORS } from '../config/errors'
 
 class Loader {
+  /**
+   * Loads a HTML file or stream
+   *
+   * @static
+   * @param {string | stream} input
+   * @return {Promise}
+   * @memberof Loader
+   */
   static async load(input) {
     if (_isString(input)) {
       // create stream to minimize memory costs
@@ -15,6 +23,14 @@ class Loader {
     }
   }
 
+  /**
+   * Parse a given HTML into a cheerio HTMl object
+   *
+   * @static
+   * @param {string} html
+   * @return {Object} cheerio html object
+   * @memberof Loader
+   */
   static parseHTML(html) {
     const $ = cheerio.load(html)
 

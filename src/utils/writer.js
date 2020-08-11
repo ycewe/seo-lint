@@ -3,15 +3,23 @@ import { OUTPUT } from '../config/enums'
 import { CONFIG_ERRORS } from '../config/errors'
 
 class Writer {
-  static async write(string, outputOption) {
+  /**
+   * Write any given data into an output
+   *
+   * @static
+   * @param {string} data
+   * @param {string | stream} outputOption
+   * @memberof Writer
+   */
+  static async write(data, outputOption) {
     if (_isString(outputOption)) {
       if (outputOption == OUTPUT.CONSOLE) {
-        _writeToConsole(string)
+        _writeToConsole(data)
       } else {
-        await _writeStream(string, fs.createWriteStream(outputOption))
+        await _writeStream(data, fs.createWriteStream(outputOption))
       }
     } else if (_isWritableStream(outputOption)) {
-      await _writeStream(string, outputOption)
+      await _writeStream(data, outputOption)
     } else if (_isNotUndefined(outputOption)) {
       throw new Error(CONFIG_ERRORS.INVALID_OUTPUT)
     }
