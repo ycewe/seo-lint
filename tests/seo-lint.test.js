@@ -55,7 +55,7 @@ describe('seo-lint.js', () => {
         })
 
         describe('when a writable stream output is provided', () => {
-          const output = `${__dirname}/__output__/seo-lint-writable-stream.test.txt`
+          const output = `${__dirname}/__output__/seo-lint-writable-stream.txt`
           const subject = new SEOLint({ output: fs.createWriteStream(output) })
 
           it('should print output onto a file', async () => {

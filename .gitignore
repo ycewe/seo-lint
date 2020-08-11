@@ -107,4 +107,4 @@ dist
 .tool-versions
 
 # jest test
-__output__
+tests/__output__/*.txt
