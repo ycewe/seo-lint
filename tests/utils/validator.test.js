@@ -118,6 +118,17 @@ describe('validator.js', () => {
         const subject = new Validator([
           {
             tag: 'a',
+            min: Infinity,
+          },
+        ])
+
+        expect(subject.validate($('html'))).toEqual([])
+      })
+
+      it('should return empty array when the rules are valid and obeyed', () => {
+        const subject = new Validator([
+          {
+            tag: 'a',
             min: 1,
             max: -1,
           },

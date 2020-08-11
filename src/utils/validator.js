@@ -54,11 +54,11 @@ class Validator {
       return
     }
 
-    if (max != RULES.IGNORE && max < numberOfTags) {
+    if (max != RULES.IGNORE && max != RULES.MUST_BE_ALL && max < numberOfTags) {
       this.errors.push(RULE_ERRORS.ABOVE_MAX(max, selector))
     }
 
-    if (min != RULES.IGNORE && min > numberOfTags) {
+    if (min != RULES.IGNORE && min != RULES.MUST_BE_ALL && min > numberOfTags) {
       this.errors.push(RULE_ERRORS.BELOW_MIN(min, selector))
     }
   }
